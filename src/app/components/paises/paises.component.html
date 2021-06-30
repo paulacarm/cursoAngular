@@ -1,0 +1,17 @@
+<mat-paginator [length]="paises.length"
+               [pageSize]="page_size"
+               [pageSizeOptions]="pageSizeOptions"
+               (page)="handlePage($event)"class="pagination" showFirstLastButtons>
+</mat-paginator>
+
+{{saludo}}
+<mat-card *ngFor="let pais of paises |  paginate:page_size:page_number ">
+    <mat-card-header>
+        <mat-card-title style="font-size: larger;font-weight: bold;color: rgba(12, 11, 11, 0.753);">{{pais.country | upercase}} 
+        </mat-card-title><br>
+        <mat-card-subtitle  style="color:blue">confirmados: {{pais.confirmed }}</mat-card-subtitle> <br>
+        <mat-card-subtitle style="color: green;">recuperados: {{pais.recovered}}</mat-card-subtitle> <br>
+        <mat-card-subtitle  style="color: red">fallecidos: {{pais.deaths}}</mat-card-subtitle> <br>
+        <mat-card-subtitle  style="color:darkgoldenrod">críticos: {{pais.critical}}</mat-card-subtitle> <br>
+    </mat-card-header>
+</mat-card>

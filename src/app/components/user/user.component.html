@@ -1,0 +1,11 @@
+<form [formGroup]="signupForm" (ngSubmit)="signIn(signupForm.value)">
+    <label for="user">User</label><br>
+    <input formControlName="user" type="text"><br>
+    <div style="color: red;" *ngIf="signupForm.get('user').invalid && signupForm.get('user').touched ">
+        Es necesario introducir el usuario
+    </div>
+    <label for="password">password</label><br>
+    <input formControlName="password" type="password" name="password"><br>
+    <button type="submit" [disabled]="signupForm.invalid"> Iniciar sesión</button>
+</form>
+

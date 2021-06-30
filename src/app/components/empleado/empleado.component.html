@@ -1,0 +1,14 @@
+<p>empresa del empleado: {{empresa}}</p>
+<!--keyup, evento para cuando se levanta el dedo de la tecla
+disabled entre corchetes para asignarle un valor del ts
+Introduce la empresa <input type="text" #empresa (keyup)="0" [disabled]=habilitacionCuadro>-->
+
+Introduce la empresa <input type="text"  [(ngModel)]="empresa" [disabled]=habilitacionCuadro>
+
+<br>
+<br>
+Registrado: <input type="checkbox" id="registro" [checked]="registrado" (click)="setUsuarioRegistrado()" >
+<p *ngIf=(registrado)>el usuario se ha registrado</p>
+<p *ngIf=(!registrado)>no hay ningun usuario registrado</p>
+
+<!--{{textoRegistro}}-->
